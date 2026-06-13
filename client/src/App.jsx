@@ -7,6 +7,9 @@ import SpeechRecognition, {
 } from "react-speech-recognition";
 
 function App() {
+
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const [message, setMessage] = useState("");
   const [chat, setChat] = useState([]);
   const [pdfText, setPdfText] = useState("");
@@ -28,9 +31,9 @@ function App() {
     formData.append("pdf", file);
 
     const res = await axios.post(
-      "http://localhost:5000/api/document/upload",
-      formData
-    );
+  `${API_URL}/api/document/upload`,
+  formData
+);
 
     setPdfText(res.data.text);
 
@@ -53,7 +56,7 @@ function App() {
     setChat((prev) => [...prev, userMsg]);
 
     const res = await axios.post(
-      "http://localhost:5000/api/chat",
+  `${API_URL}/api/chat`,
       {
         message: `
 DOCUMENT CONTENT:

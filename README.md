@@ -3,6 +3,10 @@
 An AI-powered chatbot built using React.js, Node.js, Express.js, MongoDB Atlas, and the Groq API. The chatbot supports text chat, voice input, chat memory, document uploads, and OCR-based image text extraction.
 
 ---
+🌐 **Live Watch Wildlife Website**  
+👉 [Click here to view live project](https://ai-chat-bot-beryl-two.vercel.app/)
+
+---
 
 ## 🚀 Features
 

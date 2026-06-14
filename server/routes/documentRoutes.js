@@ -7,10 +7,18 @@ const mammoth = require("mammoth");
 const { PDFParse } = require("pdf-parse");
 const Tesseract = require("tesseract.js");
 
+const uploadDir = path.join(__dirname, "../uploads");
+
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
+
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "uploads/");
+    cb(null, uploadDir);
   },
+
 
   filename: (req, file, cb) => {
     cb(null, Date.now() + "-" + file.originalname);
@@ -24,7 +32,7 @@ router.post(
   upload.single("pdf"),
   async (req, res) => {
     try {
-      const filePath = req.file.path;
+      const filePath = path.resolve(req.file.path);
 
       const ext = path
         .extname(req.file.originalname)

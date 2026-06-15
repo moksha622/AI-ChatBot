@@ -8,11 +8,12 @@ An AI-powered chatbot built using React.js, Node.js, Express.js, MongoDB Atlas, 
 
 ### Frontend (Vercel)
 
-👉 https://ai-chat-bot-beryl-two.vercel.app/
+👉 [Click here to view live project](https://ai-chat-bot-beryl-two.vercel.app/)
 
 ### Backend API (Railway)
 
-👉 https://ai-chatbot-production-9b90.up.railway.app
+👉 [Click here to view live backend](https://ai-chatbot-production-9b90.up.railway.app)
+
 
 ---
 
